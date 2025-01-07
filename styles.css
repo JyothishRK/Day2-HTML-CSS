@@ -1,17 +1,17 @@
-/* Reset default styles */
+/* ---- RESET STYLES ---- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Global styles */
+/* ---- GLOBAL STYLES ---- */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
-/* Header styles */
+/* ---- HEADER STYLES ---- */
 header {
     padding: 1rem;
     background-color: white;
@@ -37,7 +37,7 @@ nav {
     color: #333;
 }
 
-/* Hero section */
+/* ---- HERO SECTION ---- */
 .hero {
     padding: 3rem 1rem;
     max-width: 1200px;
@@ -103,7 +103,7 @@ nav {
     border-radius: 8px;
 }
 
-/* Wildlife section */
+/* ---- WILDLIFE SECTION ---- */
 .wildlife-section {
     padding: 3rem;
     position: relative;
@@ -145,7 +145,7 @@ nav {
 }
   
 
-/* Footer */
+/* ---- FOOTER ---- */
 footer {
     padding: 2rem;
     background-color: #f5f5f5;
@@ -165,14 +165,112 @@ nav .logo img,
     width: auto;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .hero {
-        grid-template-columns: 1fr;
+/* ---- RESPONSIVE STYLES ---- */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    nav {
+        flex-direction: row;
+        padding: 1rem;
+        gap: 1rem;
     }
 
     .nav-links {
+        flex-direction: row;
+        align-items: center;
         gap: 1rem;
     }
+
+    /* Hero section */
+    .hero {
+        grid-template-columns: 1fr;  /* Stack content vertically */
+        padding: 2rem 1rem;
+        min-height: auto;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        align-items: center;
+        min-height: auto;
+        padding: 1rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* Image grid */
+    .image-grid {
+        grid-template-columns: 1fr;  /* Single column */
+        gap: 1rem;
+        min-height: auto;
+    }
+
+    .column {
+        height: auto;
+        gap: 1rem;
+    }
+
+    /* Reset flex alignments for mobile */
+    .column:nth-child(1),
+    .column:nth-child(2),
+    .column:nth-child(3) {
+        justify-content: flex-start;
+    }
+
+    .column img {
+        height: 200px;  /* Smaller images on mobile */
+    }
+
+    /* Wildlife section */
+    .wildlife-section {
+        height: 300px;
+        padding: 1rem;
+    }
+
+    .animated-text {
+        font-size: 2rem;  /* Smaller text size */
+        bottom: 30px;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+/* Additional breakpoint for very small devices */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .column img {
+        height: 150px;
+    }
 } 
+
+/* ---- ABOUT PAGE STYLES ---- */
+.welcome-section {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome-section p {
+    padding: 1rem;
+    max-width: 100%;  /* Changed from 900px to fit the grid column */
+}
+
+.mission-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
